@@ -8,7 +8,7 @@
 
 namespace BootstrapForm;
 
-class FormTest extends \PHPUnit_Framework_TestCase {
+class FormBasicTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @var Form
@@ -21,33 +21,18 @@ class FormTest extends \PHPUnit_Framework_TestCase {
 
     public function setUp()
     {
-        $this->form = new Form('test');
-        $this->formTypes = $this->form->formsType;
+        $this->form = new FormBasic('test');
     }
 
     public function tearDown()
     {
         unset($this->form);
-        unset($this->formTypes);
     }
     public function testTypeForm()
     {
-        foreach ($this->formTypes as $expected => $type) {
-            $this->form->setType($expected);
-            $this->assertEquals($expected, $this->form->getType());
-        }
+        $this->assertEquals('basic', $this->form->getType());
     }
-    public function testRenderForm()
-    {
-        foreach ($this->formTypes as $expected => $type) {
-            $this->form->setType($expected);
-            $this->form->render();
-            $this->assertEquals(
-                $type,
-                get_class($this->form->form)
-            );
-        }
-    }
+
     public function testHasLabels()
     {
         $this->assertTrue($this->form->hasLabels());
@@ -62,9 +47,5 @@ class FormTest extends \PHPUnit_Framework_TestCase {
         $expected = 'GET';
         $this->form->setMethod('GET');
         $this->assertEquals($expected, $this->form->getMethod());
-    }
-    public function testElements()
-    {
-        $this->assertTrue(is_array($this->form->getElements()));
     }
 }

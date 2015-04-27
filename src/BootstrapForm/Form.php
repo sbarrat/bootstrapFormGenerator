@@ -12,7 +12,7 @@ namespace BootstrapForm;
 
 
 class Form {
-
+    const version = '0.0.1-alpha';
     private $idName;
     private $formType = 'basic';
     private $elements = array();
@@ -113,7 +113,7 @@ class Form {
      * Establece el array de elementos que contendra el formulario
      * @param array $elements
      */
-    public function setElements(array $elements)
+    public function setElements(array $elements = array())
     {
         $this->elements = $elements;
     }
@@ -127,33 +127,57 @@ class Form {
         return $this->elements;
     }
 
+    /**
+     * Establecemos el metodo de envio
+     * @param string $method
+     */
     public function setMethod($method = 'POST')
     {
         $this->method = $method;
     }
 
+    /**
+     * Devuelve el metodo de envio
+     * @return string
+     */
     public function getMethod()
     {
         return $this->method;
     }
 
+    /**
+     * Establece la accion de post
+     * @param string $action
+     */
     public function setAction($action = '')
     {
         $this->action = $action;
     }
 
+    /**
+     * Devuelve la accion
+     * @return string
+     */
     public function getAction()
     {
         return $this->action;
     }
+
     /**
      * Renderiza el formulario
+     * @return mixed
      */
     public function render()
     {
         if (array_key_exists($this->formType, $this->formsType)) {
             $this->form = new $this->formsType[$this->formType]
-            ($this);
+            (
+                $this->idName,
+                $this->labels,
+                $this->elements,
+                $this->method,
+                $this->action
+            );
         }
         return $this->form->render();
     }

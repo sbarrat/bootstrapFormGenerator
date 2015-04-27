@@ -21,6 +21,11 @@ class Form {
         'inline' => 'BootstrapForm\FormInline',
         'horizontal' => 'BootstrapForm\FormHorizontal'
     );
+    public $formClass = array(
+        'basic' => '',
+        'inline' => 'class="form-inline"',
+        'horizontal' => 'class="form-horizontal"'
+    );
     private $labels = true;
     private $method = 'POST';
     private $action = '';

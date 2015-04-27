@@ -25,7 +25,9 @@ class FormHorizontal extends Form {
         $form = "<form id='".$this->getIdName()."' name='".$this->getIdName()."'
         class='form-horizontal' method='".$this->getMethod()."' action='"
             .$this->getAction()."'>";
-        // TODO: Implement render() method.
+        foreach ($this->getElements() as $element) {
+            $form .= $element;
+        }
         $form .= "</form>";
         return $form;
     }

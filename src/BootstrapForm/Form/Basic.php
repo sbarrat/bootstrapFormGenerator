@@ -6,15 +6,14 @@
  * Time: 14:11
  */
 
-namespace BootstrapForm;
+namespace BootstrapForm\Form;
 
+use BootstrapForm\Form;
+final class Basic extends Form{
 
-final class FormBasic extends Form{
-
-    public function __construct($idName, $labels = true, $elements = array(), $method = 'POST', $action = '')
+    public function __construct($idName, $elements = array(), $method = 'POST', $action = '')
     {
         parent::setIdName($idName);
-        parent::setLabels($labels);
         parent::setType('basic');
         parent::setElements($elements);
         parent::setMethod($method);

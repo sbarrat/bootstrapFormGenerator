@@ -6,12 +6,12 @@
  * Time: 13:53
  */
 
-namespace BootstrapForm;
+namespace BootstrapForm\Form;
 
-class FormHorizontalTest extends \PHPUnit_Framework_TestCase {
+class HorizontalTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * @var Form
+     * @var Horizontal
      */
     public $form;
     /**
@@ -21,7 +21,7 @@ class FormHorizontalTest extends \PHPUnit_Framework_TestCase {
 
     public function setUp()
     {
-        $this->form = new FormHorizontal('test');
+        $this->form = new Horizontal('test');
     }
 
     public function tearDown()
@@ -31,13 +31,6 @@ class FormHorizontalTest extends \PHPUnit_Framework_TestCase {
     public function testTypeForm()
     {
         $this->assertEquals('horizontal', $this->form->getType());
-    }
-
-    public function testHasLabels()
-    {
-        $this->assertTrue($this->form->hasLabels());
-        $this->form->setLabels(false);
-        $this->assertFalse($this->form->hasLabels());
     }
 
     public function testMethodForm()

@@ -17,16 +17,15 @@ class Form {
     private $formType = 'basic';
     private $elements = array();
     public $formsType = array(
-        'basic' => 'BootstrapForm\FormBasic',
-        'inline' => 'BootstrapForm\FormInline',
-        'horizontal' => 'BootstrapForm\FormHorizontal'
+        'basic' => 'BootstrapForm\Form\Basic',
+        'inline' => 'BootstrapForm\Form\Inline',
+        'horizontal' => 'BootstrapForm\Form\Horizontal'
     );
     public $formClass = array(
         'basic' => '',
         'inline' => 'class="form-inline"',
         'horizontal' => 'class="form-horizontal"'
     );
-    private $labels = true;
     private $method = 'POST';
     private $action = '';
     /**
@@ -38,7 +37,6 @@ class Form {
      * Inicializa el formulario
      * @param $idName
      * @param string $type
-     * @param bool $labels
      * @param array $elements
      * @param string $method
      * @param string $action
@@ -46,7 +44,6 @@ class Form {
     public function __construct(
         $idName,
         $type = 'basic',
-        $labels = true,
         $elements = array(),
         $method = 'POST',
         $action = ''
@@ -54,7 +51,6 @@ class Form {
     {
         $this->setIdName($idName);
         $this->setType($type);
-        $this->setlabels($labels);
         $this->setElements($elements);
         $this->setMethod($method);
         $this->setAction($action);
@@ -94,24 +90,6 @@ class Form {
     public function getIdName()
     {
         return $this->formType;
-    }
-
-    /**
-     * Establece si el formulario va a mostrar o no las labels
-     * @param $labels
-     */
-    public function setLabels($labels = true)
-    {
-        $this->labels = $labels;
-    }
-
-    /**
-     * Devuelve si el formulario tiene o no labels
-     * @return bool
-     */
-    public function hasLabels()
-    {
-        return $this->labels;
     }
 
     /**
@@ -178,7 +156,6 @@ class Form {
             $this->form = new $this->formsType[$this->formType]
             (
                 $this->idName,
-                $this->labels,
                 $this->elements,
                 $this->method,
                 $this->action

@@ -48,12 +48,6 @@ class FormTest extends \PHPUnit_Framework_TestCase {
             );
         }
     }
-    public function testHasLabels()
-    {
-        $this->assertTrue($this->form->hasLabels());
-        $this->form->setLabels(false);
-        $this->assertFalse($this->form->hasLabels());
-    }
 
     public function testMethodForm()
     {

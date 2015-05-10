@@ -6,12 +6,12 @@
  * Time: 13:53
  */
 
-namespace BootstrapForm;
+namespace BootstrapForm\Form;
 
-class FormInlineTest extends \PHPUnit_Framework_TestCase {
+class BasicTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * @var Form
+     * @var Basic
      */
     public $form;
     /**
@@ -21,24 +21,16 @@ class FormInlineTest extends \PHPUnit_Framework_TestCase {
 
     public function setUp()
     {
-        $this->form = new FormInline('test');
+        $this->form = new Basic('test');
     }
 
     public function tearDown()
     {
         unset($this->form);
-
     }
     public function testTypeForm()
     {
-        $this->assertEquals('inline', $this->form->getType());
-    }
-
-    public function testHasLabels()
-    {
-        $this->assertTrue($this->form->hasLabels());
-        $this->form->setLabels(false);
-        $this->assertFalse($this->form->hasLabels());
+        $this->assertEquals('basic', $this->form->getType());
     }
 
     public function testMethodForm()

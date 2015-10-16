@@ -89,7 +89,7 @@ class Form {
      */
     public function getIdName()
     {
-        return $this->formType;
+        return $this->idName;
     }
 
     /**

@@ -104,7 +104,7 @@ class Input extends Attributes{
         $format = "
         <div class='form-group'>
         <label for='".$this->getIdName()."'
-            class='".$this->getLabelClass() ."''>"
+            class='".$this->getLabelClass() ."'>"
             .$this->getLabelText()."</label>
         ".$this->divOpen."
         <input type='".$this->getType()."' class='".$this->getClass()."'

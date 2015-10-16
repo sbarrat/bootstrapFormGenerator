@@ -33,6 +33,11 @@ class BasicTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('basic', $this->form->getType());
     }
 
+    public function testGetIdName()
+    {
+        $this->assertEquals('test', $this->form->getIdName());
+    }
+
     public function testMethodForm()
     {
         $expected = 'POST';

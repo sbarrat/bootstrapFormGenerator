@@ -4,7 +4,7 @@
   "description": "Generate Boostrap Forms",
   "keywords": ["Bootstrap3","Form"],
   "homepage": "http://github.com/sbarrat/bootstrapFormGenerator",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
@@ -13,7 +13,8 @@
     }
   ],
   "require": {
-    "php": ">=5.3.2"
+    "php": ">=5.3.2",
+    "sbarrat/bootstrap-form-generator": "0.0.1-alpha"
   },
   "autoload": {
     "psr-0": { "BootstrapForm": "src/" }

@@ -37,10 +37,9 @@ class InlineTest extends \PHPUnit_Framework_TestCase {
 
     public function testMethodForm()
     {
-        $expected = 'POST';
-        $this->assertEquals($expected, $this->form->getMethod());
-        $expected = 'GET';
+        
+        $this->assertEquals('POST', $this->form->getMethod());
         $this->form->setMethod('GET');
-        $this->assertEquals($expected, $this->form->getMethod());
+        $this->assertEquals('GET', $this->form->getMethod());
     }
 }

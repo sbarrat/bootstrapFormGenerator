@@ -8,3 +8,9 @@ vendor/
 # composer.lock
 
 
+/nbproject/private/
+composer.lock
+
+nbproject/project.properties
+
+nbproject/project.xml

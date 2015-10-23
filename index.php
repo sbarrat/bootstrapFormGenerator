@@ -33,7 +33,7 @@ use BootstrapForm\Input;
 
     
 <?php
-$inputText = new Input('basic', 'basicInput');
+$inputText = new Input('basic', 'basicInput', 'Input Text');
 // Basic Form
 $basicForm = new  Form('basicForm');
 $basicForm->setElements(array($inputText->render()));
